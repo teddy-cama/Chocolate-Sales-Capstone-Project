@@ -30,96 +30,63 @@ Kaggle is a great site to get data sets to practice Data Analysis
 
 ## Problem given
 
-Alright, let's treat this like a data analysis project. You've got a CSV file with product information, and there are many things we can do with it! Here's a breakdown of potential operations and analysis, as if I were your "boss" giving you tasks:
+Excellent! You've provided a clear summary of your sales data. Let's get to work. Here are a bunch of tasks to analyze your sales data, structured to build your skills progressively:
 
-**Phase 1: Data Exploration and Cleaning (Essential First Steps)**
+**Phase 1: Basic Exploration and Cleaning**
 
-1.  **"First, I need you to understand the data. Load the CSV and give me a summary of each column. Tell me the data type, the number of missing values, and the number of unique values for each field."**
-    * This involves using Python libraries like Pandas to read the CSV and perform basic data inspection.
-    * Essentially, you'll need to use functions like `df.info()`, `df.isnull().sum()`, and `df.nunique()`.
+1.  **"Convert the 'Date' column to datetime objects. This will allow us to perform time-based analysis. Then tell me the earliest and latest date in the dataset."**
+    * Use `pd.to_datetime()` to convert the column.
+    * Use `.min()` and `.max()` on the datetime column.
 
-2.  **"Next, we need to clean the data. Handle the missing values appropriately. For numeric fields like 'Price' and 'Stock', consider imputation or removal. For categorical fields like 'Color' or 'Category', decide on a strategy (e.g., fill with 'Unknown' or remove rows)."**
-    * This requires you to make decisions based on the context.
-    * Imputation (filling missing values) can be done using mean, median, or mode.
-    * Removing rows with many missing values might be necessary.
+2.  **"Check for unique values in the 'Country', 'Product', and 'Sales Person' columns. How many unique values are there in each column?"**
+    * Use `.nunique()` to get the count.
+    * Use `.unique()` to see the unique values themselves if needed.
 
-3.  **"Check for inconsistencies in the 'Currency' and 'Price' fields. Ensure all prices are in a consistent currency (e.g., convert all prices to USD if necessary). Also, clean up any text fields like 'Description' or 'Name' by removing unnecessary whitespace or special characters."**
-    * This step ensures data quality and consistency.
-    * You might need to write functions to clean text.
-    * You might need to use external api's to convert currency.
+3.  **"Analyze the 'Amount' and 'Boxes Shipped' columns. Calculate the descriptive statistics (mean, median, standard deviation, min, max, etc.). Are there any outliers?"**
+    * Use `.describe()` to get the statistics.
+    * Use histograms or box plots to visualize the distributions and identify outliers.
 
-4.  **"Examine the 'Stock' and 'Availability' fields. Are they consistent? Do they provide redundant information? If so, decide which field is more reliable and consider removing the other."**
-    * Sometimes, multiple fields convey similar information.
+4.  **"Check for any inconsistencies in the 'Currency' column. Are all transactions in the same currency? If not, investigate and handle the differences if needed. If there are multiple currencies, inform me of the conversion rates to a single currency, for example, USD."**
+    * Use `.unique()` and `.value_counts()` to understand the currencies.
+
+5.  **"Create a new column called 'Amount per Box' by dividing the 'Amount' column by the 'Boxes Shipped' column. Then analyze the distribution of this new column."**
+    * This helps understand the price per box.
 
 **Phase 2: Basic Analysis and Reporting**
 
-5.  **"Provide a summary report of the distribution of products across different 'Categories' and 'Brands'. Show me the top 5 categories and brands with the highest product counts."**
-    * This involves using `value_counts()` and plotting libraries like Matplotlib or Seaborn.
+6.  **"Calculate the total sales 'Amount' and 'Boxes Shipped' for each 'Country'. Which country has the highest sales? Which country has the most boxes shipped?"**
+    * Use `groupby()` and `sum()`.
 
-6.  **"Analyze the 'Price' distribution. Calculate the mean, median, and standard deviation of prices. Create a histogram to visualize the price distribution. Identify any outliers."**
-    * This helps understand the pricing strategy and identify potential errors.
+7.  **"Calculate the total sales 'Amount' and 'Boxes Shipped' for each 'Product'. Which product is the best seller in terms of amount? Which product has the highest number of boxes shipped?"**
+    * Use `groupby()` and `sum()`.
 
-7.  **"Investigate the relationship between 'Category' and 'Price'. Are there any categories with significantly higher or lower average prices? Create box plots to visualize this relationship."**
-    * This helps understand pricing per category.
+8.  **"Calculate the total sales 'Amount' and 'Boxes Shipped' for each 'Sales Person'. Who is the top sales person?"**
+    * Use `groupby()` and `sum()`.
 
-8.  **"Show me the stock levels for each brand. Which brands have the most stock? Which brands have the least stock?"**
-    * Helps understand inventory per brand.
+9.  **"Analyze sales over time. Calculate the total sales 'Amount' per month. Create a line plot to visualize the trend."**
+    * Extract the month from the 'Date' column.
+    * Use `groupby()` and `sum()`.
+    * Use `matplotlib` or `seaborn` for plotting.
+
+10. **"Analyze sales by 'Country' and 'Product'. Create a pivot table or a grouped bar chart to visualize the sales 'Amount' for each product in each country."**
+    * Use `pivot_table()` or `groupby()` and `unstack()`.
 
 **Phase 3: Advanced Analysis (If Time Permits)**
 
-9.  **"Perform a correlation analysis between numeric fields like 'Price' and 'Stock'. Is there any relationship between these variables?"**
-    * This helps understand potential correlations.
+11. **"Calculate the average 'Amount per Box' for each 'Product' and 'Country'. Are there any significant differences in price per box across different regions or products?"**
+    * Use `groupby()` and `mean()`.
 
-10. **"Analyze the 'Description' field using text analysis techniques. Identify the most common keywords or phrases used in product descriptions. This can help us understand customer preferences."**
-    * This requires Natural Language Processing (NLP) techniques.
+12. **"Perform a time series analysis to identify any seasonal patterns or trends in sales. Decompose the time series into trend, seasonality, and residual components."**
+    * Use `statsmodels` library for time series decomposition.
 
-11. **"Create a dashboard that summarizes key metrics, such as total product count, average price, and stock levels. Include visualizations of product distribution across categories and brands."**
-    * This helps present the findings in a clear and concise manner.
+13. **"Identify the top 3 Sales Persons in each country based on sales amount. Produce a table that shows this information."**
+    * Use `groupby()`, `apply()`, and `nlargest()`.
 
-**Example Python Code Snippets (Illustrative)**
+14. **"Create a dashboard that summarizes the key findings. Include visualizations of sales by country, product, and sales person, as well as the time series analysis."**
+    * Consider using libraries like `plotly` or `dash` for interactive dashboards.
 
-```python
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
+Remember to replace `"your_sales_data.csv"` with your actual filename. Let me know how it goes and if you have any questions!
 
-# Load the CSV
-df = pd.read_csv("your_file.csv")
-
-# 1. Summary of each column
-print(df.info())
-print(df.isnull().sum())
-print(df.nunique())
-
-# 2. Handle missing values (example)
-df['Price'].fillna(df['Price'].median(), inplace=True)
-df['Color'].fillna('Unknown', inplace=True)
-
-# 5. Category and brand distribution
-print(df['Category'].value_counts().head(5))
-print(df['Brand'].value_counts().head(5))
-
-# 6. Price distribution
-print(df['Price'].describe())
-plt.hist(df['Price'])
-plt.show()
-
-# 7. Category vs. Price
-sns.boxplot(x='Category', y='Price', data=df)
-plt.xticks(rotation=90)
-plt.show()
-
-# 8. Stock per brand.
-print(df.groupby('Brand')['Stock'].sum().sort_values(ascending = False))
-```
-
-**Remember:**
-
-* Replace `"your_file.csv"` with the actual filename.
-* These are just starting points. Adapt them to your specific needs.
-* Document your steps and findings clearly.
-
-Let me know when you've uploaded the file, and we can dive deeper into the specific tasks!
 
 
 ## Process and Workflow
@@ -128,6 +95,7 @@ Let me know when you've uploaded the file, and we can dive deeper into the speci
 ### Step One: Loading the Data Set
 - With pd.load_csv() I loaded the data set as df.
  I used df.info() to get information about the data set.
+    
     **Problem(s) Encountered.**
     - Could not read the CSV file which was in the 'data' folder.
         - *Tried:*
@@ -161,5 +129,38 @@ With lambda, we eliminate the dollar sign from all values.
 - Dropped the Integer Amount Column
 - Exported the dataframe as "Cleaned Chocolate Sales.csv"
 
-### Step Three:
+### Phase 1: Basic Exploration and Cleaning
+
+1.  **"Convert the 'Date' column to datetime objects. This will allow us to perform time-based analysis. Then tell me the earliest and latest date in the dataset."**
+    * Use `pd.to_datetime()` to convert the column.
+    * Use `.min()` and `.max()` on the datetime column.
+- Converted the dates from "04-Jan-22" to a usable python format; "2022-01-04" for easy data retrieval.
+- Our Earliest Shipment Date was on "2022-01-03".
+- Our Latest Shipment Date was "2022-08-31".
+
+2.  **"Check for unique values in the 'Country', 'Product', and 'Sales Person' columns. How many unique values are there in each column?"**
+    * Use `.nunique()` to get the count.
+    * Use `.unique()` to see the unique values themselves if needed.
+***using the above functions, we see that:***
+
+- there are 6 unique countries; 'UK', 'India', 'Australia', 'New Zealand', 'USA', 'Canada'
+- there are 22 unique products; 'Mint Chip Choco',
+        '85% Dark Bars', 'Peanut Butter Cubes',
+        'Smooth Sliky Salty', '99% Dark & Pure', 'After Nines',
+       '50% Dark Bites', 'Orange Choco', 'Eclairs', 'Drinking Coco',
+       'Organic Choco Syrup', 'Milk Bars', 'Spicy Special Slims',
+       'Fruit & Nut Bars', 'White Choc', 'Manuka Honey Choco',
+       'Almond Choco', 'Raspberry Choco', 'Choco Coated Almonds',
+       "Baker's Choco Chips", 'Caramel Stuffed Bars', '70% Dark Bites'
+- there are 25 Sales Persons;'Jehu Rudeforth', 'Van     Tuxwell',
+        'Gigi Bohling', 'Jan Morforth',
+       'Oby Sorrel', 'Gunar Cockshoot', 'Brien Boise',
+       'Rafaelita Blaksland', 'Barr Faughny', 'Mallorie Waber',
+       'Karlen McCaffrey', "Marney O'Breen", 'Beverie Moffet',
+       'Roddy Speechley', 'Curtice Advani', 'Husein Augar', 'Kaine Padly',
+       'Dennison Crosswaite', "Wilone O'Kielt", 'Andria Kimpton',
+       'Kelci Walkden', 'Camilla Castle', 'Madelene Upcott',
+       'Dotty Strutley', 'Ches Bonnell'
+
+
  Capstone Project Analysing Chocolate Sales
