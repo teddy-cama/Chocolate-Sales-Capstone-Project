@@ -152,7 +152,7 @@ With lambda, we eliminate the dollar sign from all values.
        'Fruit & Nut Bars', 'White Choc', 'Manuka Honey Choco',
        'Almond Choco', 'Raspberry Choco', 'Choco Coated Almonds',
        "Baker's Choco Chips", 'Caramel Stuffed Bars', '70% Dark Bites'
-- there are 25 Sales Persons;'Jehu Rudeforth', 'Van     Tuxwell',
+- there are 25 Sales Persons; 'Jehu Rudeforth', 'Van     Tuxwell',
         'Gigi Bohling', 'Jan Morforth',
        'Oby Sorrel', 'Gunar Cockshoot', 'Brien Boise',
        'Rafaelita Blaksland', 'Barr Faughny', 'Mallorie Waber',
@@ -161,6 +161,33 @@ With lambda, we eliminate the dollar sign from all values.
        'Dennison Crosswaite', "Wilone O'Kielt", 'Andria Kimpton',
        'Kelci Walkden', 'Camilla Castle', 'Madelene Upcott',
        'Dotty Strutley', 'Ches Bonnell'
+
+3.  **"Analyze the 'Amount' and 'Boxes Shipped' columns. Calculate the descriptive statistics (mean, median, standard deviation, min, max, etc.). Are there any outliers?"**
+    * Use `.describe()` to get the statistics.
+    * Use histograms or box plots to visualize the distributions and identify outliers.
+***The Descriptive Statistics from our sales are:***
+
+- A total of 1094 transactions summing up to $6,183,625 in revenue.
+- on average, we made $5,652.308044 per transaction.
+- some other information regarding our sales are listed below:
+    std       4102.442014
+    min          7.000000
+    25%       2390.500000
+    50%       4868.500000
+    75%       8027.250000
+    max      22050.000000
+
+***The Descriptive Statistics from our Shipments are:***
+
+- A total of 1094 shipments with 177,007 total goods shipped.
+- on average we shipped 162 goods.
+- some other information regarding shipments are listed below:
+    std       121.544145
+    min         1.000000
+    25%        70.000000
+    50%       135.000000
+    75%       228.750000
+    max       709.000000
 
 
  Capstone Project Analysing Chocolate Sales
