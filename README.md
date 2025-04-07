@@ -4,11 +4,17 @@ This project was created as a practice exercise to learn and apply the fundament
 
 ## Project Structure/
 Chocolate Sales Capstone Project/
+
 ├── data/
+
 │   └── Chocolate Sales.csv
+
 ├── notebooks/
+
 │   └── Chocolate Sales.ipynb
+
 ├── README.md
+
 └── LICENSE
 
 
@@ -113,5 +119,37 @@ Let me know when you've uploaded the file, and we can dive deeper into the speci
 ## Process and Workflow
 *Note: I had already done most of the tasks before creating a repo, so I will make adjustments to the main file "Chocolate Sales.ipynb", separating it into other sections for easy understanding. All tasks are currently jam-packed into one file which is quite unreadable, so I'll group the tasks into different notebooks.*
 
+### Step One: Loading the Data Set
+ With pd.load_csv() I loaded the data set as df.
+ I used df.info() to get information about the data set.
+#### Problem(s) Encountered.
+- Could not read the CSV file which was in the 'data' folder.
+    - *Tried:*
+        *"read_csv(../data/'Chocolate Sales.csv')"*
+        *No success.*
+    - *Tried:*
+        *"data_dir = 'data'*
+        *file_name = Chocolate Sales.csv'*
+        *file_path = os.path.join(data_dir, Chocolate Sales.csv)*
+        *df = pd.read_csv(file_path)".*
+        *No success*
+    - *Tried:*
+        *file_path = 'C:\Users\HP\Documents\GitHub\Data Analysis Projects\Chocolate-Sales-Capstone-Project\data'*
+        *df = pd.read_csv(file_path)*
+        *No Success*
+    - *Temporary Solution*
+        *Copied the data into the notebook folder, and load normally.*
+
+### Step Two: Cleaning the Data Set
+- From the data given in the information, I can see that the values for 'Amount' are all objects. I have to convert them into integers to make them workable.
+I create a new column and make it all the currency values without the dollar sign.
+With lambda, we eliminate the dollar sign from all values.
+#### Problem Encountered
+- Values still cannot be recognized as strings due to the commas.
+    - *Tried:*
+        *Converting the all values in the column to strings, then replaced all commas with spaces, and removed the spaces.*
+- Converted the string numerical values using the lambda function.
+- Mirrored the Values onto the 'Amount' column.
+- Renamed the Amount column.
 
  Capstone Project Analysing Chocolate Sales
