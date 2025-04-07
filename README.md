@@ -12,6 +12,10 @@ Chocolate Sales Capstone Project/
 └── LICENSE
 
 
+## Data Source
+I got the data from [https://www.kaggle.com/datasets/atharvasoundankar/chocolate-sales?resource=download]
+Kaggle is a great site to get data sets to practice Data Analysis
+
 ## Problem given
 
 Alright, let's treat this like a data analysis project. You've got a CSV file with product information, and there are many things we can do with it! Here's a breakdown of potential operations and analysis, as if I were your "boss" giving you tasks:
@@ -105,4 +109,7 @@ print(df.groupby('Brand')['Stock'].sum().sort_values(ascending = False))
 
 Let me know when you've uploaded the file, and we can dive deeper into the specific tasks!
 
+
+## Process and Workflow
+*Note: I had already done most of the tasks before creating a repo, so I will make adjustments to the main file "Chocolate Sales.ipynb", separating it into other sections for easy understanding. All tasks are currently jam-packed into one file which is quite unreadable, so I'll group the tasks into different notebooks.*
  Capstone Project Analysing Chocolate Sales
