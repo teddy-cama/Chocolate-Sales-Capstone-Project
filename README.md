@@ -112,4 +112,6 @@ Let me know when you've uploaded the file, and we can dive deeper into the speci
 
 ## Process and Workflow
 *Note: I had already done most of the tasks before creating a repo, so I will make adjustments to the main file "Chocolate Sales.ipynb", separating it into other sections for easy understanding. All tasks are currently jam-packed into one file which is quite unreadable, so I'll group the tasks into different notebooks.*
+
+
  Capstone Project Analysing Chocolate Sales
