@@ -17,7 +17,7 @@ Chocolate Sales Capstone Project/
 
 ├── ├── Cleaned Chocolate Sales.csv
 
-│   └── Chocolate Sales.ipynb
+├── └── Chocolate Sales.ipynb
 
 ├── README.md
 
