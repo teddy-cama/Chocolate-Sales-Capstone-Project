@@ -143,8 +143,8 @@ With lambda, we eliminate the dollar sign from all values.
     * Use `.unique()` to see the unique values themselves if needed.
 ***using the above functions, we see that:***
 
-- there are 6 unique countries; 'UK', 'India', 'Australia', 'New Zealand', 'USA', 'Canada'
-- there are 22 unique products; 'Mint Chip Choco',
+- there are 6 different countries we export to; 'UK', 'India', 'Australia', 'New Zealand', 'USA', 'Canada'
+- there are 22 different products we have on the market; 'Mint Chip Choco',
         '85% Dark Bars', 'Peanut Butter Cubes',
         'Smooth Sliky Salty', '99% Dark & Pure', 'After Nines',
        '50% Dark Bites', 'Orange Choco', 'Eclairs', 'Drinking Coco',
