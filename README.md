@@ -171,23 +171,36 @@ With lambda, we eliminate the dollar sign from all values.
 - on average, we made $5,652.308044 per transaction.
 - some other information regarding our sales are listed below:
     std       4102.442014
+
     min          7.000000
+
     25%       2390.500000
+
     50%       4868.500000
+
     75%       8027.250000
+
     max      22050.000000
+
 
 ***The Descriptive Statistics from our Shipments are:***
 
 - A total of 1094 shipments with 177,007 total goods shipped.
 - on average we shipped 162 goods.
 - some other information regarding shipments are listed below:
+
     std       121.544145
+
     min         1.000000
+
     25%        70.000000
+
     50%       135.000000
+
     75%       228.750000
+
     max       709.000000
+    
 
 
  Capstone Project Analysing Chocolate Sales
